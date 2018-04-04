@@ -1,5 +1,5 @@
 FROM node:latest
-MAINTAINER Jordan Jethwa
+LABEL maintainer="mikkelaunsbjerg"
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
@@ -7,7 +7,9 @@ ENV HUBOT_SLACK_TOKEN nope-1234-5678-91011-00e4dd
 ENV HUBOT_NAME myhubot
 ENV HUBOT_OWNER none
 ENV HUBOT_DESCRIPTION Hubot
-ENV EXTERNAL_SCRIPTS "hubot-help,hubot-pugme"
+ENV EXTERNAL_SCRIPTS "hubot-help"
+
+RUN apt-get update ; apt-get install -y sshpass
 
 RUN useradd hubot -m
 
