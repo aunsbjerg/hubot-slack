@@ -13,7 +13,7 @@ RUN apt-get update ; apt-get install -y sshpass
 
 RUN useradd hubot -m
 
-RUN npm install -g hubot coffee-script yo generator-hubot
+RUN npm install -g hubot coffeescript yo generator-hubot
 
 USER hubot
 
